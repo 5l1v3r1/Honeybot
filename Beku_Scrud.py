@@ -2,7 +2,7 @@ import socket
 import sys
 import time 
 
-#Beku_Scrud
+#Beku_Scrud made by B3nac
 #Python3 honeypot, logs connection attempts.
 #Todo
 #Make it a honeynet
