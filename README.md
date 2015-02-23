@@ -7,9 +7,9 @@ Instructions
 
 2. Type Sudo Python3 #need sudo for socket permissions.
 
-3. When Pytho3 starts the Python3 terminal go to Beku_Scrub.py directory and type import Beku_Scrub.
+3. When Python3 starts the Python3 terminal go to Beku_Scrud.py directory and type import Beku_Scrud.
 
-4. After importing Beku_Scrub type Beku_Scrub.honeypot('theip', port). #replace theip with actual ip and port with port number.
+4. After importing Beku_Scrud type Beku_Scrud.honeypot('theip', port). #replace theip with actual ip and port with port number.
 
 5. The program should now be running waiting for anyone to attempt to connect to it. 
 
