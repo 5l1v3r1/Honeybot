@@ -7,8 +7,11 @@ import time
 #Todo
 #Make it a honeynet
 
-def honeypot(server_address, port):
-    print('start!')
+def honeypot():
+    print('Starting on local address!')
+    server_address = '127.0.0.1'
+    print('Enter port number: ')
+    port = int(input())
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_address = ('', port)
     try:
