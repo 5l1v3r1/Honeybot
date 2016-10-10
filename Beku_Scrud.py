@@ -9,11 +9,8 @@ import time
 
 def honeypot():
     print('Starting on local address!')
-    server_address = '127.0.0.1'
-    print('Enter port number: ')
-    port = int(input())
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_address = ('', port)
+    server_address = ('', 22)
     
     try:
         sock.bind(server_address)
@@ -31,21 +28,25 @@ def honeypot():
                    print('client connected:', client_address, file = sys.stderr)
                    print('Computer name:', compname, file = sys.stderr)
                    while True:
-                       connection.send(bytes('Jokes on you.', 'UTF-8'))
-                       data = connection.recv(16)
-                       print('recieved "%s"', data, file = sys.stderr)
-                       if data:
-                           connection.sendall(data)
+                       try:
+                           connection.send(bytes('Jokes on you.', 'UTF-8'))
+                           data = connection.recv(16)
+                           print('recieved "%s"', data, file = sys.stderr)
+                       except socket.error as e:
+                           if e.args[0] in (errno.EPIPE, errno.ECONNRESET):
+                               raise
+                           if data:
+                               connection.sendall(data)
                            
-                           f = open("person.txt", "a")
-                           f.write(str("\n"))
-                           f.write(str(connection))
-                           f.write(str(client_address))
-                           f.write(str(compname))
-                           f.close()
+                               f = open("person.txt", "a")
+                               f.write(str("\n"))
+                               f.write(str(connection))
+                               f.write(str(client_address))
+                               f.write(str(compname))
+                               f.close()
                            
-                       else:
-                           break
+                           else:
+                               break
                finally:
                    print('restarting')
                    
