@@ -1,19 +1,12 @@
-#Beku_Scrud
-Honeypot using Python3.
-
-------------
-Instructions Windows
-------------
-1.Install Python 3.3 or later.
-
-2. Run Beku_Skrud and input port. May be prompted by windows firewall.
+#Honeybot
+Turn your raspberry pi into a honeypot and physical intrusion detection system. An Arduino feeds the physical detection to the Raspberry pi. I still need to upload the Arduino scripts and list sensors I'm using.
 
 -------------
-Instructions Linux
+Instructions 
 -------------
 1. Open terminal
 
-2. Type Sudo python3 Beku_Skrud. This is for socket permissions.
+2. Type Sudo python3 Honeybotpot.py. This is for socket permissions.
 
 3. The program should now be running waiting for anyone to attempt to connect to the port. 
 
@@ -24,3 +17,9 @@ To-do
 -----------
 
 1. Monitor more ports and restart automatically while monitoring after gettng a connection.
+
+2. Refining the physical detection on the arduino side.
+
+3. Upload Arduino scripts
+
+4. List sensors being used.
