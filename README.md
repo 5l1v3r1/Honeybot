@@ -1,5 +1,5 @@
 #Honeybot
-Turn your raspberry pi into a honeypot and physical intrusion detection system. An Arduino feeds the physical detection to the Raspberry pi. I still need to upload the Arduino scripts and list sensors I'm using.
+Turn your raspberry pi into a SSH honeypot and physical intrusion detection system. An Arduino feeds the physical detection to the Raspberry pi. I still need to upload the Arduino scripts and list sensors I'm using.
 
 -------------
 Instructions 
