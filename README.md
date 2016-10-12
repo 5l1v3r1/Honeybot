@@ -6,11 +6,19 @@ Instructions
 -------------
 1. Open terminal
 
-2. Type Sudo python3 Honeybotpot.py. This is for socket permissions.
+2. Navigate to your desired directory.
 
-3. The program should now be running waiting for anyone to attempt to connect to the port. 
+3. git clone https://github.com/B3nac/Honeybot
+
+4. cd into the Honeybot directory.
+
+5. Type Sudo python3 Honeybotpot.py. This is for socket permissions.
+
+6. The program should now be running waiting for anyone to attempt to connect to the port. 
 
 You can also test it by opening another cmd prompt and typing ncat ip port and the program should display the user and ip that connected and will also make a person.txt log.
+
+This is a very basic honeypot so far, I want to eventually create an environment for it.
 
 -----------
 To-do
