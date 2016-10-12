@@ -12,7 +12,8 @@ def honeypot():
     print('Starting on local address!')
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_address = ('', 22)
-    
+    compname = socket.gethostname()
+
     try:
         sock.bind(server_address)
     except socket.error:
@@ -42,8 +43,8 @@ def honeypot():
                            if e.args[0] in (errno.EPIPE, errno.ECONNRESET):
                                pass
                   
-                           else:
-                               break
+                       else:
+                           break
                finally:
                    print('restarting')
                    
