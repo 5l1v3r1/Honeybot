@@ -33,12 +33,12 @@ def honeypot():
                            connection.send(bytes('Jokes on you.', 'UTF-8'))
                            data = connection.recv(16)
                            print('recieved "%s"', data, file = sys.stderr)
+                           connection.sendall(data)
                        except socket.error as e:
                            if e.args[0] in (errno.EPIPE, errno.ECONNRESET):
-                               raise
+                               pass
                            if data:
-                               connection.sendall(data)
-                           
+                        
                                f = open("person.txt", "a")
                                f.write(str("\n"))
                                f.write(str(connection))
