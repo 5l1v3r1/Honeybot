@@ -1,6 +1,7 @@
 import socket
 import sys
 import time 
+from errno import EPIPE, ECONNRESET
 
 #Beku_Scrud made by B3nac
 #Python3 honeypot, logs connection attempts.
