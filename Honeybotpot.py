@@ -24,10 +24,14 @@ def honeypot():
                sock.listen(1)
                print('waiting for a connection from sneaky mofackles.', file = sys.stderr)
                connection, client_address = sock.accept()
-               compname = socket.gethostname() 
                try:
                    print('client connected:', client_address, file = sys.stderr)
-                   print('Computer name:', compname, file = sys.stderr)
+                   f = open("person.txt", "a")
+                   f.write(str("\n"))
+                   f.write(str(connection))
+                   f.write(str(client_address))
+                   f.write(str(compname))
+                   f.close()
                    while True:
                        try:
                            connection.send(bytes('Jokes on you.', 'UTF-8'))
@@ -37,15 +41,7 @@ def honeypot():
                        except socket.error as e:
                            if e.args[0] in (errno.EPIPE, errno.ECONNRESET):
                                pass
-                           if data:
-                        
-                               f = open("person.txt", "a")
-                               f.write(str("\n"))
-                               f.write(str(connection))
-                               f.write(str(client_address))
-                               f.write(str(compname))
-                               f.close()
-                           
+                  
                            else:
                                break
                finally:
